@@ -15,7 +15,7 @@
     <header id="top" class="site-header" role="banner">
       <div class="brand">
         <a href="#top" class="brand__link" aria-label="CoreAI Home">
-          <span class="brand__name">/CoreAI</span>
+          <img class="brand__logo" src="img/logo.png" alt="CoreAI" />
         </a>
       </div>
 
@@ -28,26 +28,27 @@
           Copenhagen-based consultancy specializing in advanced Generative AI
           and Agentic AI solutions.
         </p>
+
         <nav class="social-nav" aria-label="Social media">
           <ul>
             <li>
               <a href="#" aria-label="Facebook">
-                <img src="img/icons8-facebook-48.png" alt="Facebook" />
+                <span class="icon icon--fb" aria-hidden="true"></span>
               </a>
             </li>
             <li>
               <a href="#" aria-label="Instagram">
-                <img src="img/insta.png" alt="Instagram" />
+                <span class="icon icon--ig" aria-hidden="true"></span>
               </a>
             </li>
             <li>
               <a href="#" aria-label="LinkedIn">
-                <img src="img/link.png" alt="LinkedIn" />
+                <span class="icon icon--ln" aria-hidden="true"></span>
               </a>
             </li>
             <li>
               <a href="#" aria-label="TikTok">
-                <img src="img/tik.png" alt="Email" />
+                <span class="icon icon--tt" aria-hidden="true"></span>
               </a>
             </li>
           </ul>
@@ -56,7 +57,7 @@
     </header>
 
     <main id="main" tabindex="-1">
-      <!-- SECTION 1 -->
+      <!-- SECTION SERVICES -->
       <section id="services" aria-labelledby="services-title">
         <h1 id="services-title" class="visually-hidden">CoreAI Services</h1>
         <ul class="service-list">
@@ -110,7 +111,7 @@
         </aside>
       </section>
 
-      <!-- SECTION 2 -->
+      <!-- SECTION PROBLEMS -->
       <section id="problems" aria-labelledby="problems-title">
         <div class="problems-layout">
           <div class="problems-left"></div>
@@ -137,183 +138,193 @@
 
       <div class="section-sep" aria-hidden="true"></div>
 
-      <!-- SECTION 3 -->
-      <section id="why-agentic" aria-labelledby="why-title">
-        <header class="section-header">
-          <h2 id="why-title">&lt;Why Agentic AI?&gt;</h2>
-        </header>
-        <div class="columns">
-          <article>
-            <p>
-              Market Size: The AI Agents Market is anticipated to experience
-              substantial expansion, ascending from a value of $10&nbsp;billion
-              in 2024 to a substantial $196.6&nbsp;bln. predicted by 2030.
-            </p>
-          </article>
-          <article>
-            <p>
-              The combined LLM and Agentic AI market will grow from ~ $12.2B in
-              2024 to over $232B by 2030–2034, representing one of the
-              fastest‑growing tech sectors with CAGRs exceeding 35–44%.
-            </p>
-          </article>
+      <!-- SECTION WHY AGENTIC -->
+      <section id="why-agentic" class="rail" aria-labelledby="why-title">
+        <div class="rail__inner">
+          <header class="section-header">
+            <h2 id="why-title">&lt;Why Agentic AI?&gt;</h2>
+          </header>
+          <div class="columns">
+            <article>
+              <p>
+                Market Size: The AI Agents Market is anticipated to experience
+                substantial expansion, ascending from a value of
+                $10&nbsp;billion in 2024 to a substantial $196.6&nbsp;bln.
+                predicted by 2030.
+              </p>
+            </article>
+            <article>
+              <p>
+                The combined LLM and Agentic AI market will grow from ~ $12.2B
+                in 2024 to over $232B by 2030–2034, representing one of the
+                fastest-growing tech sectors with CAGRs exceeding 35–44%.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
+
       <div class="section-sep" aria-hidden="true"></div>
 
-      <!-- SECTION 4 -->
-      <section id="use-cases" aria-labelledby="use-cases-title">
-        <header class="section-header">
-          <h2 id="use-cases-title">&lt;Use cases&gt;</h2>
-        </header>
+      <!-- SECTION USE CASES -->
+      <section id="use-cases" class="rail" aria-labelledby="use-cases-title">
+        <div class="rail__inner">
+          <header class="section-header">
+            <h2 id="use-cases-title">&lt;Use cases&gt;</h2>
+          </header>
 
-        <div class="use-cases-layout">
-          <aside class="use-cards" aria-label="Highlighted use cases">
-            <ul>
-              <li>
-                <article>
-                  <img
-                    class="usecard-img"
-                    src="img/case1.png"
-                    alt="Production Planning"
-                  />
-                  <header>
-                    <h3>Production Planning</h3>
-                  </header>
+          <div class="use-cases-layout">
+            <aside class="use-cards" aria-label="Highlighted use cases">
+              <ul>
+                <li>
+                  <article>
+                    <img
+                      class="usecard-img"
+                      src="img/case1.png"
+                      alt="Production Planning"
+                    />
+                    <header>
+                      <h3>Production Planning</h3>
+                    </header>
+                    <p>
+                      Agents coordinate production schedules across multiple
+                      lines, optimize material flow, and automatically adjust
+                      capacity based on demand forecasts and supply chain
+                      constraints.
+                    </p>
+                    <p><a href="#">More Information</a></p>
+                  </article>
+                </li>
+
+                <li>
+                  <article>
+                    <img
+                      class="usecard-img"
+                      src="img/case2.png"
+                      alt="Demand & Supply Forecasting"
+                    />
+                    <header>
+                      <h3>Demand &amp; Supply Forecasting</h3>
+                    </header>
+                    <p>
+                      Agents forecast demand across offline, retail, through
+                      loyalty program while accounting for seasonality,
+                      promotions, and market trends — coordinating.
+                    </p>
+                    <p><a href="#">More Information</a></p>
+                  </article>
+                </li>
+              </ul>
+            </aside>
+
+            <article class="case-feature" aria-labelledby="case-ecosystem">
+              <header>
+                <h3 id="case-ecosystem">AI Social Assistant Ecosystem</h3>
+              </header>
+
+              <figure class="case-hero">
+                <img
+                  src="img/afenticAi2.png"
+                  alt="AI Social Assistant Ecosystem"
+                />
+              </figure>
+
+              <ul>
+                <li>Over 500 agents connected into 1 system</li>
+                <li>Orchestrated domain-specific agents</li>
+                <li>AI-native developers trained in-house</li>
+                <li>Hybrid Business Model</li>
+              </ul>
+
+              <div class="case-text">
+                <p class="case-intro">
+                  AI Social Assistant Ecosystem is an agentic platform that
+                  helps newcomers navigate state welfare, legal, and
+                  bureaucratic complexity—fast and reliably.
+                </p>
+
+                <section aria-labelledby="problem-heading">
+                  <h4 id="problem-heading">Problem</h4>
                   <p>
-                    Agents coordinate production schedules across multiple
-                    lines, optimize material flow, and automatically adjust
-                    capacity based on demand forecasts and supply chain
-                    constraints.
+                    Language barriers, lack of immediate professional help, poor
+                    accessibility and long request cycle times, and
+                    unfamiliarity with public systems create delays and poor
+                    outcomes.
                   </p>
-                  <p><a href="#">More Information</a></p>
-                </article>
-              </li>
-
-              <li>
-                <article>
-                  <img
-                    class="usecard-img"
-                    src="img/case2.png"
-                    alt="Demand & Supply Forecasting"
-                  />
-                  <header>
-                    <h3>Demand &amp; Supply Forecasting</h3>
-                  </header>
+                </section>
+                <section aria-labelledby="solution-heading">
+                  <h4 id="solution-heading">Solution</h4>
                   <p>
-                    Agents forecast demand across offline, retail, through
-                    loyalty program while accounting for seasonality,
-                    promotions, and market trends — coordinating.
+                    One ecosystem with 100-language accessibility, real-time
+                    verified legal and public sources, and step-by-step
+                    guidance. It offers context-aware suggestions plus personal
+                    use-case analysis and recommendations. Now civilguide helps
+                    around 10 mln people over Europe.
                   </p>
-                  <p><a href="#">More Information</a></p>
-                </article>
-              </li>
-            </ul>
-          </aside>
-
-          <article class="case-feature" aria-labelledby="case-ecosystem">
-            <header>
-              <h3 id="case-ecosystem">AI Social Assistant Ecosystem</h3>
-            </header>
-
-            <figure class="case-hero">
-              <img
-                src="img/afenticAi2.png"
-                alt="AI Social Assistant Ecosystem"
-              />
-            </figure>
-
-            <ul>
-              <li>Over 500 agents connected into 1 system</li>
-              <li>Orchestrated domain-specific agents</li>
-              <li>AI-native developers trained in-house</li>
-              <li>Hybrid Business Model</li>
-            </ul>
-
-            <div class="case-text">
-            <p class="case-intro">
-              AI Social Assistant Ecosystem is an agentic platform that helps
-              newcomers navigate state welfare, legal, and bureaucratic
-              complexity—fast and reliably.
-            </p>
-
-            <section aria-labelledby="problem-heading">
-              <h4 id="problem-heading">Problem</h4>
-              <p>
-                Language barriers, lack of immediate professional help, poor
-                accessibility and long request cycle times, and unfamiliarity
-                with public systems create delays and poor outcomes.
-              </p>
-            </section>
-            <section aria-labelledby="solution-heading">
-              <h4 id="solution-heading">Solution</h4>
-              <p>
-                One ecosystem with 100-language accessibility, real-time
-                verified legal and public sources, and step-by-step guidance. It
-                offers context-aware suggestions plus personal use-case analysis
-                and recommendations. Now civilguide helps around 10 mln people
-                over Europe.
-              </p>
-            </section>
-            <p><a href="#">Read More Cases</a></p>
-          </article>
+                </section>
+                <p><a href="#">Read More Cases</a></p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
+
       <div class="section-sep" aria-hidden="true"></div>
 
-      <!-- CONTACT -->
+      <!-- CONTACT (placeholder) -->
       <section id="contact" aria-labelledby="contact-title">
         <h2 id="contact-title" class="visually-hidden">Contact</h2>
-        <!-- Content to be added later. -->
       </section>
     </main>
 
     <!-- FOOTER -->
-    <footer class="site-footer" role="contentinfo">
-      <nav class="footer-nav" aria-label="Footer">
-        <ul>
-          <li><a href="#top">Home</a></li>
-          <li><a href="#use-cases">Read More Cases</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#use-cases">Cases</a></li>
-          <li><a href="#">Agentic AI Statistics</a></li>
-        </ul>
-      </nav>
+    <footer class="site-footer rail" role="contentinfo">
+      <div class="rail__inner footer-grid">
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#use-cases">Read More Cases</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#use-cases">Cases</a></li>
+            <li><a href="#">Agentic AI Statistics</a></li>
+          </ul>
+        </nav>
 
-      <section aria-labelledby="footer-branding">
-        <h2 id="footer-branding" class="visually-hidden">Branding</h2>
-        <p class="footer-logo">/CoreAI</p>
-      </section>
+        <section aria-labelledby="footer-branding">
+          <h2 id="footer-branding" class="visually-hidden">Branding</h2>
+          <img class="footer-logo-img" src="img/logoB.png" alt="CoreAI" />
+        </section>
 
-      <nav class="social-nav" aria-label="Social media">
-        <ul>
-          <li>
-            <a href="#" aria-label="Facebook">
-              <img src="img/fbW.png" alt="Facebook" />
-            </a>
-          </li>
-          <li>
-            <a href="#" aria-label="Instagram">
-              <img src="img/instaW.png" alt="Instagram" />
-            </a>
-          </li>
-          <li>
-            <a href="#" aria-label="LinkedIn">
-              <img src="img/linkW.png" alt="LinkedIn" />
-            </a>
-          </li>
-          <li>
-            <a href="#" aria-label="TikTok">
-              <img src="img/tikW.png" alt="Email" />
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="social-nav" aria-label="Social media">
+          <ul>
+            <li>
+              <a href="#" aria-label="Facebook">
+                <span class="icon icon--fb" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Instagram">
+                <span class="icon icon--ig" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="LinkedIn">
+                <span class="icon icon--ln" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="TikTok">
+                <span class="icon icon--tt" aria-hidden="true"></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-      <section aria-labelledby="footer-legal">
-        <h2 id="footer-legal" class="visually-hidden">Legal</h2>
-        <small>All rights reserved CoreAI 2025</small>
-      </section>
+        <section aria-labelledby="footer-legal">
+          <h2 id="footer-legal" class="visually-hidden">Legal</h2>
+          <small>All rights reserved CoreAI 2025</small>
+        </section>
+      </div>
     </footer>
   </body>
 </html>
