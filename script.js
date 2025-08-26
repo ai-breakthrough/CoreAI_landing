@@ -1,6 +1,3 @@
-// ===============================
-// 1. Автоматичне підключення паралаксу на картинки
-// ===============================
 (function () {
   const set = (el, attrs) => {
     if (!el) return;
@@ -11,6 +8,7 @@
 
   // ===== SERVICES =====
   document.querySelectorAll('#services img').forEach(img => {
+    if (img.dataset.parallax === 'off') return;
     if (!img.hasAttribute('data-parallax')) {
       set(img, {
         'data-parallax': true,
@@ -22,7 +20,7 @@
     }
   });
 
-  // ===== USE CASES — маленькі картки =====
+  // ===== USE CASES  =====
   const attachUseCards = () => {
     document.querySelectorAll('#use-cases .usecard-img').forEach(img => {
       if (!img.hasAttribute('data-parallax')) {
@@ -38,7 +36,7 @@
   };
   attachUseCards();
 
-  // ===== USE CASES — головне зображення =====
+  // ===== USE CASES =====
   const hero = document.querySelector('#use-cases .case-hero img');
   if (hero && !hero.hasAttribute('data-parallax')) {
     set(hero, {
@@ -51,7 +49,7 @@
     });
   }
 
-  // ===== PROBLEMS — ліва колонка (фон) =====
+  // ===== PROBLEMS left =====
   const probLeft = document.querySelector('#problems .problems-left');
   if (probLeft && !probLeft.hasAttribute('data-parallax')) {
     set(probLeft, {
@@ -63,7 +61,7 @@
     });
   }
 
-  // ===== PROBLEMS — картинки справа =====
+  // ===== PROBLEMS right =====
   document.querySelectorAll('#problems .problems-right img').forEach(img => {
     if (!img.hasAttribute('data-parallax')) {
       set(img, {
@@ -76,13 +74,11 @@
     }
   });
 
-  // Перепривʼязуємо картинки після завантаження сторінки
   window.addEventListener('DOMContentLoaded', attachUseCards);
 })();
 
-// ===============================
-// 2. Паралакс-движок
-// ===============================
+// ===== PARALLAX =====
+
 (() => {
   const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
@@ -192,9 +188,6 @@
   update();
 })();
 
-// ===============================
-// 3. Анімація чисел у #why-agentic
-// ===============================
 (() => {
   const root = document.querySelector('#why-agentic');
   if (!root) return;
