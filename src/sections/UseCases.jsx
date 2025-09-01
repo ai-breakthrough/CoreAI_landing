@@ -1,12 +1,12 @@
 export default function UseCases() {
   const cases = [
     {
-      img: '/img/case1.png',
+      img: 'img/case1.png',
       title: 'Production Planning',
       text: 'Agents coordinate production schedules across multiple lines, optimize material flow, and auto-adjust capacity from demand & supply constraints.',
     },
     {
-      img: '/img/case2.png',
+      img: 'img/case2.png',
       title: 'Demand & Supply Forecasting',
       text: 'Forecast across retail & loyalty, accounting for seasonality, promos, and market trends — then coordinate execution.',
     },
@@ -63,7 +63,7 @@ export default function UseCases() {
 
             <figure className="my-6">
               <img
-                src="/img/afenticAi2.png"
+                src="img/afenticAi2.png"
                 alt="AI Social Assistant Ecosystem"
                 className="w-full max-w-[420px] border border-black"
                 loading="lazy"

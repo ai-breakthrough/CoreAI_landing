@@ -5,7 +5,7 @@ export default function Problems() {
         <div
           className="hidden lg:block h-full w-full bg-cover bg-center"
           style={{
-            backgroundImage: "url('/img/afenticAi.png')",
+            backgroundImage: "url('img/afenticAi.png')",
           }}
           role="img"
           aria-label="Agents collage"

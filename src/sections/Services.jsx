@@ -1,19 +1,19 @@
 export default function Services() {
   const cards = [
     {
-      img: '/img/header1.png',
+      img: 'img/header1.png',
       alt: 'Process Automation',
       tag: 'Process Automation',
       pill: 'bg-[#9fd7ff]',
     },
     {
-      img: '/img/header2.png',
+      img: 'img/header2.png',
       alt: 'Digital Coworkers',
       tag: 'Digital Coworkers',
       pill: 'bg-[#ffe59a]',
     },
     {
-      img: '/img/header3.png',
+      img: 'img/header3.png',
       alt: 'Agentic AI Strategy',
       tag: 'Agentic AI Strategy',
       pill: 'bg-[#e6e6e6]',
@@ -24,14 +24,14 @@ export default function Services() {
     <section id="services" className="relative py-10">
       <div
         className="pointer-events-none absolute left-0 top-0 h-full w-3/4 bg-cover bg-center opacity-30 blur-[2px]"
-        style={{ backgroundImage: "url('/img/afenticAi2.png')" }}
+        style={{ backgroundImage: "url('img/afenticAi2.png')" }}
       />
 
       <div className="absolute right-0 top-0 h-full w-1/4 bg-[#fdfbea] bg-[radial-gradient(rgba(0,0,0,0.28)_1px,transparent_1px)] [background-size:10px_10px] z-0" />
 
       <div className="absolute right-0 top-0 h-full w-1/4 hidden sm:flex items-end justify-center pb-6 z-10">
         <img
-          src="/img/aws.png"
+          src="img/aws.png"
           alt="AWS Partner"
           className="sm:w-[120px] md:w-[140px] lg:w-[170px] rounded-md bg-white p-2 shadow"
           loading="lazy"
