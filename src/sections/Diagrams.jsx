@@ -4,11 +4,11 @@ import SectionContainer from '@/components/SectionContainer';
 
 export default function Diagrams() {
   const images = [
-    { src: 'img/slide_1.png', alt: 'Diagram 1' },
-    { src: 'img/slide_2.png', alt: 'Diagram 2' },
-    { src: 'img/slide_3.png', alt: 'Diagram 3' },
-    { src: 'img/slide_4.png', alt: 'Diagram 4' },
-    { src: 'img/slide_5.png', alt: 'Diagram 5' },
+    { src: 'img/Asset_1.svg', alt: 'Diagram 1' },
+    { src: 'img/Asset_2.svg', alt: 'Diagram 2' },
+    { src: 'img/Asset_3.svg', alt: 'Diagram 3' },
+    { src: 'img/Asset_4.svg', alt: 'Diagram 4' },
+    { src: 'img/Asset_5.svg', alt: 'Diagram 5' },
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
