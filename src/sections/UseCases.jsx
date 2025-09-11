@@ -60,7 +60,7 @@ export default function UseCases() {
             </div>
 
             <article>
-              <h2 className="text-3xl font-semibold">
+              <h2 className="font-mono text-2xl font-semibold">
                 AI Social Assistant Ecosystem
               </h2>
 
