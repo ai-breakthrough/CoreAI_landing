@@ -5,6 +5,7 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 import SocialLink from '@/components/SocialLink';
+import LanguageDropdown from '@/components/LanguageDropdown';
 
 export default function Header() {
   return (
@@ -33,6 +34,7 @@ export default function Header() {
                   /CoreAI
                 </h1>
               </a>
+              <LanguageDropdown />
             </div>
           </div>
         </div>

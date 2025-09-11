@@ -47,7 +47,7 @@ export default function UseCases() {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-semibold">{c.title}</h3>
+                    <h3 className="text-l font-semibold">{c.title}</h3>
                     <p className="mt-1 text-sm leading-6 text-slate-700">
                       {c.text}
                     </p>
