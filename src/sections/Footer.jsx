@@ -9,16 +9,16 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-black py-12 text-white">
+    <footer className="bg-black md:py-6 py-12 text-white">
       <SectionContainer>
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-6 px-5 md:grid-cols-3">
           <nav aria-label="Footer menu" className="flex flex-col gap-2">
             {[
               { href: '#top', label: 'Home' },
-              { href: '#use-cases', label: 'Read More Cases' },
+              { href: '#services', label: 'Read More Cases' },
               { href: '#', label: 'Blog' },
               { href: '#use-cases', label: 'Cases' },
-              { href: '#', label: 'Agentic AI Statistics' },
+              { href: '#solutions', label: 'Agentic AI Statistics' },
             ].map(l => (
               <a
                 key={l.label}
