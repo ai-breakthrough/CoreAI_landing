@@ -26,7 +26,7 @@ export default function Problems() {
             </h2>
           </header>
 
-          <ul className="grid gap-3">
+          <ul className="font-mono grid gap-3">
             {[
               'Manual workflows that slow us down.',
               'Internal knowledge is buried across tools and teams.',
@@ -38,7 +38,7 @@ export default function Problems() {
                 {p.startsWith("Internal tools don't talk to each other.") ? (
                   <>
                     &ldquo;Internal tools don't talk to each other.{'" '}
-                    <span className="text-white/80">
+                    <span className="font-mono text-white/80">
                       (copy-paste nightmare)
                     </span>
                   </>

@@ -16,7 +16,7 @@ export default function Header() {
           <div className="mx-auto max-w-7xl px-5 py-4">
             <div className="grid grid-cols-1 sm:grid-cols-[150px_1fr] items-center gap-3">
               <aside className="font-mono text-base lowercase leading-tight">
-                <p>
+                <p className="font-mono">
                   humans <br className="hidden sm:block" />
                   working <br className="hidden sm:block" />
                   side-by-side <br className="hidden sm:block" />
@@ -42,7 +42,7 @@ export default function Header() {
         {/* blue part */}
         <div className="hidden md:flex bg-[#9fd7e5] border-l border-black items-center justify-center">
           <div className="flex flex-col items-center justify-center p-4 max-w-[380px]">
-            <p className="text-[15px] leading-snug text-black/90 text-center">
+            <p className="font-mono text-[15px] leading-snug text-black/90 text-center">
               Copenhagen-based consultancy specializing in advanced Generative
               AI and Agentic AI solutions.
             </p>

@@ -4,19 +4,19 @@ export default function Services() {
       img: 'img/header1.png',
       alt: 'Process Automation',
       tag: 'Process Automation',
-      pill: 'bg-[#9fd7ff]',
+      pill: 'bg-[#9fd7ff] font-mono',
     },
     {
       img: 'img/header2.png',
       alt: 'Digital Coworkers',
       tag: 'Digital Coworkers',
-      pill: 'bg-[#ffe59a]',
+      pill: 'bg-[#ffe59a] font-mono',
     },
     {
       img: 'img/header3.png',
       alt: 'Agentic AI Strategy',
       tag: 'Agentic AI Strategy',
-      pill: 'bg-[#e6e6e6]',
+      pill: 'bg-[#e6e6e6] font-mono',
     },
   ];
 
@@ -68,7 +68,7 @@ export default function Services() {
               id="prompt"
               rows={5}
               placeholder="Ask about CoreAI: Services, Prices, how does it work?"
-              className="w-full resize-none rounded-[14px] bg-transparent p-3 outline-none"
+              className="font-mono w-full resize-none rounded-[14px] bg-transparent p-3 outline-none"
             />
             <button
               type="submit"

@@ -20,7 +20,7 @@ export default function Footer() {
           >
             <nav
               aria-label="Footer menu"
-              className="flex flex-col gap-2 text-left"
+              className="font-mono flex flex-col gap-2 text-left"
             >
               {[
                 { href: '#top', label: 'Home' },
@@ -67,7 +67,7 @@ export default function Footer() {
             <p className="font-mono text-[clamp(36px,4.5vw,56px)] text-[#9fd7ff] leading-none">
               /CoreAI
             </p>
-            <p className="mt-3 text-xs opacity-80">
+            <p className="font-mono mt-3 text-xs opacity-80">
               All rights reserved CoreAI 2025
             </p>
           </div>
