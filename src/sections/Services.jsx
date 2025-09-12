@@ -68,7 +68,7 @@ export default function Services() {
               id="prompt"
               rows={5}
               placeholder="Ask about CoreAI: Services, Prices, how does it work?"
-              className="font-mono w-full resize-none rounded-[14px] bg-transparent p-3 outline-none"
+              className="w-full resize-none rounded-[14px] bg-transparent p-3 outline-none"
             />
             <button
               type="submit"

@@ -3,9 +3,9 @@ export const TRANSLATIONS = {
     // HEADER tagline
     humans: 'mennesker',
     working: 'arbejder',
-    'side-by-side': 'side om side',
+    'side-by-side': 'side-om-side',
     with: 'med',
-    'ai agents': 'AI-agenter',
+    'ai agents': 'AI agenter',
 
     // Header description
     'Copenhagen-based consultancy specializing in advanced Generative AI and Agentic AI solutions.':

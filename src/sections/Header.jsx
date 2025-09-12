@@ -2,78 +2,80 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaTwitter,
+  FaTiktok,
 } from 'react-icons/fa';
 import SocialLink from '@/components/SocialLink';
-import LanguageDropdown from '@/components/LanguageDropdown';
+import LanguageFlags from '@/components/LanguageFlags';
 
 export default function Header() {
   return (
     <header className="border-b border-black w-full">
       <div className="w-full grid grid-cols-1 md:grid-cols-[68%_32%]">
-        {/* yellow part */}
-        <div className="bg-[#fef3b0] w-full">
-          <div className="mx-auto max-w-7xl px-5 py-4">
-            <div className="grid grid-cols-1 sm:grid-cols-[150px_1fr] items-center gap-3">
-              <aside className="font-mono text-base lowercase leading-tight">
-                <p className="font-mono">
-                  humans <br className="hidden sm:block" />
-                  working <br className="hidden sm:block" />
-                  side-by-side <br className="hidden sm:block" />
-                  with <br className="hidden sm:block" />
-                  ai agents
+        {/* YELLOW */}
+        <div className="relative bg-[#fef3b0] w-full">
+          <LanguageFlags className="absolute top-2 right-2 z-10" />
+
+          <div className="mx-auto max-w-7xl pl-3 pr-0">
+            <div className="grid grid-cols-1 sm:grid-cols-[170px_minmax(0,1fr)] items-stretch gap-3">
+              <aside className="hidden sm:block font-mono text-base lowercase leading-tight h-full">
+                <p className="sm:hidden">
+                  humans working side-by-side with ai agents
                 </p>
+                <ul className="flex h-full flex-col justify-between">
+                  <li>humans</li>
+                  <li>working</li>
+                  <li>side-by-side</li>
+                  <li>with</li>
+                  <li>ai agents</li>
+                </ul>
               </aside>
 
-              <a
-                href="#top"
-                aria-label="CoreAI Home"
-                className="flex items-center"
-              >
-                <h1 className="font-mono text-[56px] sm:text-[64px] leading-none tracking-tight -ml-2 sm:-ml-4">
-                  /CoreAI
-                </h1>
-              </a>
-              <LanguageDropdown />
+              <div className="relative flex items-end justify-end pb-2 pr-1 min-h-[120px]">
+                <a href="#top" aria-label="CoreAI Home" className="block">
+                  <h2 className="font-mono text-[56px] sm:text-[64px] leading-none tracking-tight text-right">
+                    /CoreAI
+                  </h2>
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* blue part */}
-        <div className="hidden md:flex bg-[#9fd7e5] border-l border-black items-center justify-center">
-          <div className="flex flex-col items-center justify-center p-4 max-w-[380px]">
-            <p className="font-mono text-[15px] leading-snug text-black/90 text-center">
+        {/* BLUE */}
+        <div className="hidden md:flex bg-[#9fd7e5] border-l border-black">
+          <div className="flex flex-col items-start justify-start w-full px-3 py-3">
+            <p className="font-mono text-[15px] leading-snug text-black/90 text-left max-w-[520px]">
               Copenhagen-based consultancy specializing in advanced Generative
               AI and Agentic AI solutions.
             </p>
 
             <nav
               aria-label="Social media"
-              className="mt-3 flex gap-3 justify-center md:justify-start"
+              className="mt-3 flex gap-3 justify-start"
             >
               <SocialLink
                 Icon={FaFacebookF}
                 label="Facebook"
                 filled
-                className="md:h-9 md:w-9 lg:h-10 lg:w-10 xl:h-11 xl:w-11"
+                className="h-11 w-11 md:h-10 md:w-10"
               />
               <SocialLink
                 Icon={FaInstagram}
                 label="Instagram"
                 filled
-                className="md:h-9 md:w-9 lg:h-10 lg:w-10 xl:h-11 xl:w-11"
+                className="h-11 w-11 md:h-10 md:w-10"
               />
               <SocialLink
                 Icon={FaLinkedinIn}
                 label="LinkedIn"
                 filled
-                className="md:h-9 md:w-9 lg:h-10 lg:w-10 xl:h-11 xl:w-11"
+                className="h-11 w-11 md:h-10 md:w-10"
               />
               <SocialLink
-                Icon={FaTwitter}
-                label="Twitter"
+                Icon={FaTiktok}
+                label="TikTok"
                 filled
-                className="md:h-9 md:w-9 lg:h-10 lg:w-10 xl:h-11 xl:w-11"
+                className="h-11 w-11 md:h-10 md:w-10"
               />
             </nav>
           </div>
