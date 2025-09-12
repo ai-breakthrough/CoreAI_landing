@@ -33,7 +33,7 @@ export default function Services() {
         <img
           src="img/aws.png"
           alt="AWS Partner"
-          className="sm:w-[120px] md:w-[140px] lg:w-[170px] rounded-md bg-white p-2 shadow"
+          className="sm:w-[120px] md:w-[140px] lg:w-[140px] rounded-md bg-white mb-10 shadow"
           loading="lazy"
         />
       </div>
@@ -68,7 +68,7 @@ export default function Services() {
               id="prompt"
               rows={5}
               placeholder="Ask about CoreAI: Services, Prices, how does it work?"
-              className="font-mono w-full resize-none rounded-[14px] bg-transparent p-3 outline-none"
+              className="w-full resize-none rounded-[14px] bg-transparent p-3 outline-none"
             />
             <button
               type="submit"
