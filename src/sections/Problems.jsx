@@ -31,17 +31,12 @@ export default function Problems() {
               'Manual workflows that slow us down.',
               'Internal knowledge is buried across tools and teams.',
               'Data stored, but no one knows how to extract useful insights.',
-              "Internal tools don't talk to each other. (copy-paste nightmare)",
+              "Internal tools don't talk to each other.",
               'High Administrative Overhead.',
             ].map(p => (
               <li key={p} className="border border-white px-5 py-3">
                 {p.startsWith("Internal tools don't talk to each other.") ? (
-                  <>
-                    &ldquo;Internal tools don't talk to each other.{'" '}
-                    <span className="font-mono text-white/80">
-                      (copy-paste nightmare)
-                    </span>
-                  </>
+                  <>&ldquo;Internal tools don't talk to each other.{'" '}</>
                 ) : (
                   <>“{p}”</>
                 )}
