@@ -27,21 +27,21 @@ export default function Problems() {
           </header>
 
           <ul className="font-mono grid gap-3">
-            {[
-              'Manual workflows that slow us down.',
-              'Internal knowledge is buried across tools and teams.',
-              'Data stored, but no one knows how to extract useful insights.',
-              "Internal tools don't talk to each other.",
-              'High Administrative Overhead.',
-            ].map(p => (
-              <li key={p} className="border border-white px-5 py-3">
-                {p.startsWith("Internal tools don't talk to each other.") ? (
-                  <>&ldquo;Internal tools don't talk to each other.{'" '}</>
-                ) : (
-                  <>“{p}”</>
-                )}
-              </li>
-            ))}
+            <li className="border border-white px-5 py-3">
+              “Manual workflows that slow us down.”
+            </li>
+            <li className="border border-white px-5 py-3">
+              “Internal knowledge is buried across tools and teams.”
+            </li>
+            <li className="border border-white px-5 py-3">
+              “Data stored, but no one knows how to extract useful insights.”
+            </li>
+            <li className="border border-white px-5 py-3">
+              “Internal tools don’t talk to each other.”
+            </li>
+            <li className="border border-white px-5 py-3">
+              “High Administrative Overhead.”
+            </li>
           </ul>
         </div>
       </div>

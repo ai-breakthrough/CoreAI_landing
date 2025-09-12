@@ -13,7 +13,7 @@ export default function Header() {
       <div className="w-full grid grid-cols-1 md:grid-cols-[68%_32%] h-[108px] md:h-[140px] lg:h-[140px]">
         {/* YELLOW */}
         <div className="relative bg-[#fef3b0] w-full overflow-hidden">
-          <LanguageFlags className="absolute top-5 right-2 z-10" />
+          <LanguageFlags className="absolute top-5 right-3 z-10" />
 
           <div className="mx-auto max-w-7xl pl-3 pr-0 h-full">
             <div className="grid grid-cols-[120px_minmax(0,1fr)] sm:grid-cols-[170px_minmax(0,1fr)] items-stretch gap-3 h-full">
@@ -27,7 +27,7 @@ export default function Header() {
                 </ul>
               </aside>
 
-              <div className="relative flex items-end justify-end pb-3 pr-1 h-full">
+              <div className="relative flex items-end justify-end pb-3 pr-2 h-full">
                 <a href="#top" aria-label="CoreAI Home" className="block">
                   <h2 className="font-mono text-[44px] sm:text-[60px] leading-none tracking-tight text-right">
                     /CoreAI
@@ -44,7 +44,7 @@ export default function Header() {
             <p
               className="
                 font-mono text-left text-black/90 text-balance hyphens-auto
-                md:max-w-[520px] lg:max-w-[560px] xl:max-w-[600px] pt-2
+                md:max-w-[520px] lg:max-w-[560px] xl:max-w-[600px] mt-1
                 md:text-[12px] md:leading-[1.05rem]
                 lg:text-[clamp(13px,1vw,16px)] lg:leading-snug
                 lg:line-clamp-3

@@ -33,7 +33,7 @@ export default function Services() {
         <img
           src="img/aws.png"
           alt="AWS Partner"
-          className="sm:w-[120px] md:w-[140px] lg:w-[170px] rounded-md bg-white p-2 shadow"
+          className="sm:w-[120px] md:w-[140px] lg:w-[140px] rounded-md bg-white mb-10 shadow"
           loading="lazy"
         />
       </div>

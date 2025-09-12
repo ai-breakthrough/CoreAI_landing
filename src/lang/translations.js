@@ -9,7 +9,7 @@ export const TRANSLATIONS = {
 
     // Header description
     'Copenhagen-based consultancy specializing in advanced Generative AI and Agentic AI solutions.':
-      'København-baseret konsulentvirksomhed, der specialiserer sig i avancerede generative AI- og Agentic AI-løsninger.',
+      'København-baseret konsulentvirksomhed specialiseret i avancerede generative og Agentic AI-løsninger.',
 
     // Services cards
     'Process Automation': 'Procesautomatisering',
