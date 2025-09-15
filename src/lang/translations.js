@@ -23,8 +23,8 @@ export const TRANSLATIONS = {
     Send: 'Send',
 
     // Problems
-    '<Problems that we solve/>': '<Problemer, vi løser/>',
-    'Problems that we solve': 'Problemer, vi løser',
+    '<Problems that we solve/>': '<Problemer, som vi løser/>',
+    'Problems that we solve': 'Problemer, som vi løser',
     'Manual workflows that slow us down.':
       'Manuelle arbejdsgange, der bremser os.',
     'Internal knowledge is buried across tools and teams.':
@@ -62,7 +62,7 @@ export const TRANSLATIONS = {
       'Agenter koordinerer produktionsplaner på tværs af flere linjer, optimerer materialeflow og justerer automatisk kapaciteten efter efterspørgsel og udbud.',
     'Demand & Supply Forecasting': 'Efterspørgsels- og udbudsprognoser',
     'Forecast across retail & loyalty, accounting for seasonality, promos, and market trends — then coordinate execution.':
-      'Forudsig på tværs af detail og loyalitet med hensyntagen til sæson, kampagner og markedstendenser — og koordinér derefter udførelsen.',
+      'Vejrudsigt for detailhandel og kundeloyalitet vi kan undersøge trends, sæson, kampagner og markedstendenser — og koordinér udførelsen med jer.',
     'More Information': 'Mere information',
     'Read more cases': 'Læs flere sager',
 
@@ -82,7 +82,7 @@ export const TRANSLATIONS = {
       'Sprogbarrierer, begrænset øjeblikkelig hjælp, lange sagsforløb og manglende kendskab til offentlige systemer skaber forsinkelser og dårlige resultater.',
     Solution: 'Løsning',
     'One ecosystem with 100-language accessibility, real-time verified legal/public sources, and step-by-step guidance. Context-aware suggestions, personal use-case analysis, and recommendations. Now civilguide helps ~10M people across Europe.':
-      'Ét økosystem med adgang på 100 sprog, realtidsverificerede juridiske/offentlige kilder og trin-for-trin vejledning. Kontekstbevidste forslag, personlig use-case-analyse og anbefalinger. Nu hjælper civilguide ~10M mennesker på tværs af Europa.',
+      'Ét økosystem der kan forstå over 100 sprog, der udelukkende bruger realtidsverificerede juridiske/offentlige kilder og trin-for-trin vejledning. Programmet giver kontekstbevidste forslag, personlig use-case-analyser og anbefalinger. Nu hjælper civilguide ~10M mennesker på tværs af Europa.',
 
     // Footer
     Home: 'Hjem',
