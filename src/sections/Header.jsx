@@ -70,6 +70,7 @@ export default function Header() {
               <SocialLink
                 Icon={FaLinkedinIn}
                 label="LinkedIn"
+                href="https://www.linkedin.com/company/coreai-dk/"
                 filled
                 className="h-11 w-11 md:h-10 md:w-10"
               />
