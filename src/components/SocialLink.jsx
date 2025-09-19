@@ -1,6 +1,7 @@
 export default function SocialLink({
   Icon,
   label,
+  href = '#',
   outline = false,
   inverse = false,
   filled = false,
@@ -18,10 +19,14 @@ export default function SocialLink({
     } border`;
   else style = inverse ? 'text-white' : 'text-black';
 
+  const isExternal = href.startsWith('http');
+
   return (
     <a
-      href="#"
+      href={href}
       aria-label={label}
+      title={label}
+      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className={`${base} ${size} ${style} ${className}`}
     >
       <Icon className="h-[22px] w-[22px] md:h-[18px] md:w-[18px] lg:h-[18px] lg:w-[18px] xl:h-[22px] xl:w-[22px]" />

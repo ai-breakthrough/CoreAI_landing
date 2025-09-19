@@ -52,6 +52,7 @@ export default function Footer() {
               />
               <SocialLink
                 Icon={FaLinkedinIn}
+                href="https://www.linkedin.com/company/coreai-dk/"
                 label="LinkedIn"
                 className="bg-white text-black border border-black"
               />
