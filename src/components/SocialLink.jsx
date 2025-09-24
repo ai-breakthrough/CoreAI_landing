@@ -1,12 +1,15 @@
-export default function SocialLink({
-  Icon,
-  label,
-  href = '#',
-  outline = false,
-  inverse = false,
-  filled = false,
-  className = '',
-}) {
+import PropTypes from 'prop-types';
+
+export default function SocialLink(props) {
+  const {
+    Icon,
+    label,
+    href = '#',
+    outline = false,
+    inverse = false,
+    filled = false,
+    className = '',
+  } = props;
   const base =
     'inline-flex items-center justify-center rounded-full transition hover:scale-[1.06]';
   const size = 'h-11 w-11';
@@ -33,3 +36,13 @@ export default function SocialLink({
     </a>
   );
 }
+
+SocialLink.propTypes = {
+  Icon: PropTypes.elementType.isRequired,
+  label: PropTypes.string.isRequired,
+  href: PropTypes.string,
+  outline: PropTypes.bool,
+  inverse: PropTypes.bool,
+  filled: PropTypes.bool,
+  className: PropTypes.string,
+};
