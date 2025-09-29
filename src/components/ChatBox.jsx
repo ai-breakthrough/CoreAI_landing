@@ -6,7 +6,15 @@ export default function ChatBox() {
   const [phase, setPhase] = useState('input');
   const [lockedHeightPx, setLockedHeightPx] = useState(null);
   const textareaRef = useRef(null);
-  const loadingTimerRef = useRef(null);
+
+  const dotsTimerRef = useRef(null);
+  const waitingTimerRef = useRef(null);
+  const runIdRef = useRef(0);
+
+  const baseTextRef = useRef('');
+  const dotCountRef = useRef(1);
+
+  const WAITING_MSG = 'We’re processing your request, please wait a moment';
 
   const userIdRef = useRef(
     crypto?.randomUUID?.() ||
@@ -27,9 +35,10 @@ export default function ChatBox() {
     autoResize();
   }, [prompt, lockedHeightPx]);
 
-  const typeOut = async (fullText, onStep) => {
+  const typeOut = async (fullText, onStep, runId = runIdRef.current) => {
     let delay = 12;
     for (let i = 0; i <= fullText.length; i++) {
+      if (runIdRef.current !== runId) return;
       onStep(fullText.slice(0, i));
       await new Promise(r => setTimeout(r, delay));
       if (i > 2000) delay = 3;
@@ -37,9 +46,43 @@ export default function ChatBox() {
     }
   };
 
+  const renderDotsFrame = () => {
+    const base = baseTextRef.current;
+    const dots = '.'.repeat(dotCountRef.current);
+    setPrompt(base ? `${base} ${dots}` : dots);
+  };
+
+  const startDots = () => {
+    stopDots();
+    dotCountRef.current = 1;
+    renderDotsFrame();
+    dotsTimerRef.current = setInterval(() => {
+      dotCountRef.current = (dotCountRef.current % 5) + 1;
+      renderDotsFrame();
+    }, 400);
+  };
+
+  const stopDots = () => {
+    if (dotsTimerRef.current) {
+      clearInterval(dotsTimerRef.current);
+      dotsTimerRef.current = null;
+    }
+  };
+
+  const scheduleWaitingText = (delayMs, thisRunId) => {
+    if (waitingTimerRef.current) clearTimeout(waitingTimerRef.current);
+    waitingTimerRef.current = setTimeout(() => {
+      if (runIdRef.current !== thisRunId) return;
+      baseTextRef.current = WAITING_MSG;
+      setPhase('waiting');
+      renderDotsFrame();
+    }, delayMs);
+  };
+
   useEffect(() => {
     return () => {
-      if (loadingTimerRef.current) clearInterval(loadingTimerRef.current);
+      stopDots();
+      if (waitingTimerRef.current) clearTimeout(waitingTimerRef.current);
     };
   }, []);
 
@@ -47,46 +90,81 @@ export default function ChatBox() {
     const q = prompt.trim();
     if (phase !== 'input' || !q) return;
 
+    const thisRunId = ++runIdRef.current;
+
     const el = textareaRef.current;
     if (el) setLockedHeightPx(el.offsetHeight + 'px');
 
+    baseTextRef.current = '';
     setPhase('loading');
     setPrompt('');
+    startDots();
+    scheduleWaitingText(4000, thisRunId);
 
-    let dots = 1;
-    loadingTimerRef.current = setInterval(() => {
-      setPrompt('•'.repeat(dots));
-      dots = (dots % 5) + 1;
-    }, 400);
+    const ATTEMPT_TIMEOUT_MS = 15000;
+    const BASE_BACKOFF_MS = 1200;
+    const MAX_BACKOFF_MS = 8000;
 
-    try {
-      const answer = await askCoreAI(q, userIdRef.current);
+    const withTimeout = (p, ms) =>
+      new Promise((resolve, reject) => {
+        const to = setTimeout(() => reject(new Error('timeout')), ms);
+        p.then(
+          v => {
+            clearTimeout(to);
+            resolve(v);
+          },
+          e => {
+            clearTimeout(to);
+            reject(e);
+          },
+        );
+      });
 
-      clearInterval(loadingTimerRef.current);
-      loadingTimerRef.current = null;
+    let answer = null;
+    let attempt = 0;
+
+    while (runIdRef.current === thisRunId && answer == null) {
+      attempt += 1;
+      try {
+        const res = await withTimeout(
+          askCoreAI(q, userIdRef.current),
+          ATTEMPT_TIMEOUT_MS,
+        );
+        if (runIdRef.current !== thisRunId) return;
+        answer = res;
+      } catch (_) {
+        const backoff = Math.min(BASE_BACKOFF_MS * attempt, MAX_BACKOFF_MS);
+        await new Promise(r => setTimeout(r, backoff));
+      }
+    }
+
+    if (runIdRef.current !== thisRunId) return;
+
+    stopDots();
+    if (waitingTimerRef.current) clearTimeout(waitingTimerRef.current);
+
+    if (answer) {
+      baseTextRef.current = '';
       setLockedHeightPx(null);
       setPhase('typing');
       setPrompt('');
-
-      await typeOut(answer || '(empty response)', partial =>
-        setPrompt(partial),
-      );
+      await typeOut(answer || '(empty response)', t => setPrompt(t), thisRunId);
+      if (runIdRef.current !== thisRunId) return;
       setPhase('answer');
-    } catch (err) {
-      clearInterval(loadingTimerRef.current);
-      loadingTimerRef.current = null;
-      setLockedHeightPx(null);
-      console.error('Chat request failed:', err);
-      setPrompt('(error: failed to fetch response)');
-      setPhase('answer');
+    } else {
+      baseTextRef.current = WAITING_MSG;
+      setPhase('waiting');
+      startDots();
     }
   };
 
   const clearField = () => {
-    if (loadingTimerRef.current) {
-      clearInterval(loadingTimerRef.current);
-      loadingTimerRef.current = null;
-    }
+    ++runIdRef.current;
+    stopDots();
+    if (waitingTimerRef.current) clearTimeout(waitingTimerRef.current);
+    baseTextRef.current = '';
+    dotCountRef.current = 1;
+
     setLockedHeightPx(null);
     setPrompt('');
     setPhase('input');
@@ -102,13 +180,8 @@ export default function ChatBox() {
     if (e.isComposing) return;
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      if (phase === 'answer') {
-        clearField();
-        return;
-      }
-      if (phase === 'input') {
-        doSubmit();
-      }
+      if (phase === 'answer') return clearField();
+      if (phase === 'input') doSubmit();
     }
     if (phase === 'answer' && e.key.length === 1) {
       e.preventDefault();
@@ -117,6 +190,7 @@ export default function ChatBox() {
   };
 
   const isLoading = phase === 'loading';
+  const isWaiting = phase === 'waiting';
   const isTyping = phase === 'typing';
   const isAnswer = phase === 'answer';
   const isInput = phase === 'input';
@@ -124,8 +198,10 @@ export default function ChatBox() {
 
   const textareaClasses = [
     'w-full resize-none rounded-[14px] bg-transparent p-3 pr-16 outline-none transition-all duration-150',
-    isTyping || isAnswer ? 'font-mono text-[15px] text-black' : 'text-[15px]',
-    isLoading
+    isTyping || isAnswer || isWaiting
+      ? 'font-mono text-[15px] text-black'
+      : 'text-[15px]',
+    isLoading || isWaiting
       ? 'text-neutral-500 md:text-xl text-lg tracking-widest caret-transparent'
       : '',
   ].join(' ');
@@ -142,7 +218,7 @@ export default function ChatBox() {
           ref={textareaRef}
           rows={5}
           placeholder={
-            isLoading
+            isLoading || isWaiting
               ? ''
               : 'Ask about CoreAI: Services, Prices, how does it work?'
           }
@@ -152,7 +228,7 @@ export default function ChatBox() {
           onInput={autoResize}
           onKeyDown={onTextareaKeyDown}
           disabled={!isInput}
-          aria-busy={isLoading}
+          aria-busy={isLoading || isWaiting}
           style={{
             height: lockedHeightPx || undefined,
             overflowY: lockedHeightPx ? 'hidden' : undefined,
